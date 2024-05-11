@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 40px 0;
+        }
+        nav {
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 15px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 40px 20px;
+            margin: 20px 0;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        h1, h2, h3 {
+            color: #007bff;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 15px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Sample Website</h1>
+        <p>This is a simple webpage showcasing HTML, CSS, and JavaScript.</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <section id="about" class="container">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus scelerisque neque vitae ex fermentum, in hendrerit ligula auctor. Nullam eu lorem ac sapien eleifend suscipit vel et arcu. In hac habitasse platea dictumst. Nunc nec erat et dolor commodo tempus a eu dui.</p>
+        <a href="#" class="btn">Read More</a>
+    </section>
+
+    <section id="services" class="container">
+        <h2>Our Services</h2>
+        <div class="service">
+            <h3>Web Design</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="service">
+            <h3>Graphic Design</h3>
+            <p>Nulla nec justo et ipsum lacinia luctus.</p>
+        </div>
+        <div class="service">
+            <h3>Software Development</h3>
+            <p>Vestibulum ac mi non lectus aliquet interdum.</p>
+        </div>
+        <div class="service">
+            <h3>Digital Marketing</h3>
+            <p>Phasellus sodales risus eget gravida tempor.</p>
+        </div>
+    </section>
+
+    <section id="portfolio" class="container">
+        <h2>Portfolio</h2>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/300" alt="Project 1">
+            <img src="https://via.placeholder.com/300" alt="Project 2">
+            <img src="https://via.placeholder.com/300" alt="Project 3">
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sample Website</p>
+    </footer>
+
+    <script>
+        // Add JavaScript code here for interactivity (e.g., form submission handling)
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Add your form submission logic here (e.g., sending data to server)
+            alert('Your message has been sent!');
+        });
+    </script>
+</body>
+</html>
