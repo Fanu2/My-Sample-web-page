@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fanu2 – GitHub Repository Index</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f8fa;
+      margin: 0;
+      padding: 0;
+      color: #24292e;
+    }
+    header {
+      background: #24292e;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .repo {
+      background: white;
+      border: 1px solid #d0d7de;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .repo h2 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    .repo a {
+      color: #0969da;
+      text-decoration: none;
+    }
+    .repo p {
+      margin: 0.5rem 0;
+      line-height: 1.4;
+    }
+    .meta {
+      font-size: 0.9rem;
+      color: #57606a;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Fanu2’s GitHub Projects</h1>
+  <p>Automatically generated index of my public repositories</p>
+</header>
+
+<main id="repo-list">
+  <p>Loading repositories…</p>
+</main>
+
+<script>
+  const username = "Fanu2"; // change if needed
+  const repoList = document.getElementById("repo-list");
+
+  fetch(`https://api.github.com/users/${username}/repos?sort=updated`)
+    .then(response => response.json())
+    .then(repos => {
+      repoList.innerHTML = "";
+
+      repos.forEach(repo => {
+        if (repo.fork) return; // skip forks
+
+        const div = document.createElement("div");
+        div.className = "repo";
+
+        div.innerHTML = `
+          <h2><a href="${repo.html_url}" target="_blank">${repo.name}</a></h2>
+          <p>${repo.description || "No description provided."}</p>
+          <p class="meta">
+            Language: ${repo.language || "N/A"} • ⭐ ${repo.stargazers_count} • Updated: ${new Date(repo.updated_at).toLocaleDateString()}
+          </p>
+        `;
+
+        repoList.appendChild(div);
+      });
+    })
+    .catch(error => {
+      repoList.innerHTML = "<p>Failed to load repositories.</p>";
+      console.error(error);
+    });
+</script>
+
+</body>
+</html>
