@@ -1,20 +1,16 @@
-# Fanu2 GitHub Project Hub v1.0
+# Fanu2 GitHub Project Hub v1.1
 
-Static GitHub Pages dashboard for the Fanu2 account.
+A static GitHub Pages catalogue for the Fanu2 account.
 
-## Features
-- Automatic public repository discovery
-- Fork exclusion
-- Search
-- Active / archived / Pages filters
-- Language filters
-- Topics
-- Stars and update dates
-- GitHub Pages links
-- Responsive dashboard
-- No backend or database
+### v1.1 additions
+- Automatic project-type classification
+- Project detail modal
+- README preview
+- Repository metadata panel
+- Better GitHub Pages handling using the Pages API when details are opened
+- Pagination for accounts with more than 100 repositories
+- Search across name, description, language, type and topics
 
-## Deploy
-Replace the existing `index.html` in the GitHub Pages repository with the supplied file and push.
+Replace the existing `index.html` in the Pages repository and push it.
 
-The page uses GitHub's public REST API, so no token is stored in the site.
+No backend, database, or token is required for public repositories.

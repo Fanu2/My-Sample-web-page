@@ -1,95 +1,161 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Fanu2 — GitHub Project Hub</title>
 <style>
-:root{--bg:#0b1020;--panel:#111827;--panel2:#172033;--text:#eef2ff;--muted:#9aa7bd;--line:#273449;--accent:#7c9cff;--accent2:#5eead4;--danger:#f59e0b}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#0a0f1d,#101827);color:var(--text)}
-header{padding:42px 24px 34px;border-bottom:1px solid var(--line);background:radial-gradient(circle at 15% 10%,#20305b 0,#101827 38%,#0b1020 80%)}
-.wrap{max-width:1180px;margin:auto}.brand{display:flex;gap:18px;align-items:center}.avatar{width:64px;height:64px;border-radius:16px;background:#202b45;display:grid;place-items:center;font-weight:800;font-size:22px;color:#fff}
-h1{margin:0;font-size:34px}.subtitle{margin:7px 0 0;color:var(--muted);font-size:16px}
-main{padding:24px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}.stat b{display:block;font-size:28px}.stat span{color:var(--muted);font-size:13px}
-.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.search{flex:1;min-width:240px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--text);font-size:15px}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:10px 13px;border-radius:9px;cursor:pointer}.filter.active,.filter:hover{background:#243454;color:#fff;border-color:#4965a5}
-.section{display:flex;justify-content:space-between;align-items:center;margin:22px 0 12px}.section h2{font-size:20px;margin:0}.count{color:var(--muted);font-size:13px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:19px;transition:.18s}.card:hover{transform:translateY(-2px);border-color:#48619a}.top{display:flex;justify-content:space-between;gap:10px}.repo-name{font-size:19px;font-weight:700;margin:0}.repo-name a{color:var(--text);text-decoration:none}.repo-name a:hover{color:var(--accent)}.badge{font-size:11px;padding:4px 8px;border-radius:20px;background:#1e293b;color:#b9c5db;white-space:nowrap}.badge.archived{color:#fbbf24;background:#33270e}.desc{color:var(--muted);line-height:1.5;min-height:44px}.meta{display:flex;gap:13px;flex-wrap:wrap;color:#aeb9ca;font-size:12px}.topics{display:flex;gap:6px;flex-wrap:wrap;margin:13px 0}.topic{background:#182b46;color:#9fc1ff;padding:4px 8px;border-radius:15px;font-size:11px}.actions{display:flex;gap:8px;margin-top:15px}.btn{display:inline-block;text-decoration:none;color:#fff;background:#26375c;border:1px solid #3a4e7a;border-radius:8px;padding:8px 11px;font-size:12px}.btn.live{background:#164e4a;border-color:#277d76}.empty,.loading{padding:35px;text-align:center;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:14px}.error{color:#fecaca}
-footer{text-align:center;padding:30px;color:#718096;font-size:12px}
-@media(max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}h1{font-size:27px}}
-@media(max-width:500px){main{padding:15px}.stats{grid-template-columns:1fr 1fr}.avatar{width:50px;height:50px}.stat b{font-size:23px}}
+:root{--bg:#09101d;--panel:#111a2b;--panel2:#172238;--line:#293750;--text:#eef4ff;--muted:#9aa9c1;--blue:#82a7ff;--green:#5eead4;--amber:#fbbf24}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#08101c,#101827 55%,#0a111e);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif}
+header{padding:38px 22px 30px;border-bottom:1px solid var(--line);background:radial-gradient(circle at 12% 5%,#263b6c,#111a2b 42%,#09101d 85%)}
+.wrap{max-width:1200px;margin:auto}.brand{display:flex;gap:16px;align-items:center}.avatar{width:62px;height:62px;border-radius:16px;background:#263858;display:grid;place-items:center;font-weight:800;font-size:21px}.title h1{margin:0;font-size:32px}.title p{margin:6px 0 0;color:var(--muted)}
+main{padding:22px}.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}.stat{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:15px}.stat b{font-size:25px;display:block}.stat span{font-size:12px;color:var(--muted)}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}.search{flex:1;min-width:250px;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:11px 13px;color:var(--text);font-size:14px}.filters{display:flex;gap:7px;flex-wrap:wrap}.filter{background:var(--panel);border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:9px 11px;cursor:pointer}.filter.active,.filter:hover{background:#253a63;color:white;border-color:#5574b5}
+.section{display:flex;justify-content:space-between;align-items:center;margin:20px 0 10px}.section h2{margin:0;font-size:19px}.count{font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.card{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:17px;transition:.15s}.card:hover{border-color:#4d67a0;transform:translateY(-1px)}.top{display:flex;gap:10px;justify-content:space-between}.name{font-size:18px;font-weight:700;margin:0}.name a{color:var(--text);text-decoration:none}.name a:hover{color:var(--blue)}.type{font-size:11px;color:#b8cbff;background:#1c2b4b;padding:4px 8px;border-radius:15px;white-space:nowrap}.status{font-size:11px;color:#a7b4c8}.desc{color:var(--muted);line-height:1.45;min-height:42px;margin:9px 0}.topics{display:flex;flex-wrap:wrap;gap:5px}.topic{font-size:10px;color:#a9c5ff;background:#182a45;border-radius:14px;padding:4px 7px}.meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:11px;color:#aeb9cb;font-size:11px}.actions{display:flex;gap:7px;margin-top:13px}.btn{border:1px solid #3b507c;background:#23365d;color:white;text-decoration:none;border-radius:7px;padding:7px 10px;font-size:11px;cursor:pointer}.btn.live{background:#15534d;border-color:#2b8178}.btn.detail{background:#253044}.empty,.loading{padding:32px;text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:13px;color:var(--muted)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:20px;z-index:10}.modal.open{display:flex}.dialog{width:min(900px,100%);max-height:88vh;overflow:auto;background:#101a2c;border:1px solid #3a4b69;border-radius:16px;padding:22px;box-shadow:0 25px 80px rgba(0,0,0,.45)}.close{float:right;background:#263248;border:1px solid #3a4a64;color:white;border-radius:8px;padding:6px 10px;cursor:pointer}.detail-title{font-size:25px;margin:0 45px 4px 0}.detail-sub{color:var(--muted)}.detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:18px 0}.detail-box{background:#172238;border:1px solid var(--line);border-radius:9px;padding:11px}.detail-box small{color:var(--muted);display:block}.readme{background:#0a111e;border:1px solid var(--line);border-radius:10px;padding:15px;white-space:pre-wrap;font:13px/1.55 Consolas,monospace;color:#cbd5e1;max-height:310px;overflow:auto}
+footer{text-align:center;color:#6f7e95;font-size:11px;padding:28px}
+@media(max-width:900px){.stats{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:1fr}}
+@media(max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}.detail-grid{grid-template-columns:1fr 1fr}.title h1{font-size:25px}}
 </style>
 </head>
 <body>
-<header><div class="wrap brand"><div class="avatar">F2</div><div><h1>Fanu2 GitHub Project Hub</h1><div class="subtitle">My software projects, experiments and live GitHub Pages</div></div></div></header>
+<header><div class="wrap brand"><div class="avatar">F2</div><div class="title"><h1>Fanu2 GitHub Project Hub</h1><p>My software projects, experiments, websites and live GitHub Pages</p></div></div></header>
 <main class="wrap">
-<section class="stats" id="stats"><div class="stat"><b>—</b><span>Projects</span></div><div class="stat"><b>—</b><span>Languages</span></div><div class="stat"><b>—</b><span>Active</span></div><div class="stat"><b>—</b><span>GitHub Pages</span></div></section>
-<div class="toolbar"><input id="search" class="search" placeholder="Search projects, descriptions or topics..."><div class="filters" id="filters"></div></div>
-<div class="section"><h2>Projects</h2><span class="count" id="count"></span></div>
+<div id="stats" class="stats"></div>
+<div class="toolbar"><input id="search" class="search" placeholder="Search projects, descriptions, topics or type..."><div id="filters" class="filters"></div></div>
+<div class="section"><h2>Project Catalogue</h2><span id="count" class="count"></span></div>
 <div id="repo-list" class="grid"><div class="loading">Loading repositories from GitHub…</div></div>
 </main>
-<footer>Fanu2 GitHub Project Hub · Data supplied by the GitHub REST API</footer>
+<footer>Fanu2 GitHub Project Hub v1.1 · GitHub is the source of repository metadata</footer>
+
+<div id="modal" class="modal" role="dialog" aria-modal="true">
+<div class="dialog">
+<button class="close" onclick="closeModal()">Close</button>
+<h2 id="d-title" class="detail-title"></h2><div id="d-sub" class="detail-sub"></div>
+<div id="d-boxes" class="detail-grid"></div>
+<div id="d-actions" class="actions"></div>
+<h3>README preview</h3><div id="d-readme" class="readme">Loading README…</div>
+</div></div>
+
 <script>
 const USERNAME="Fanu2";
-const API=`https://api.github.com/users/${USERNAME}/repos?per_page=100&sort=updated`;
-let repos=[], filter="All";
+const API_BASE="https://api.github.com";
+let repos=[],filter="All";
 
 const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
-const date=s=>new Date(s).toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"});
+const date=s=>s?new Date(s).toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"}):"—";
+
+function classify(r){
+  const x=[r.name,r.description,r.language,...(r.topics||[])].join(" ").toLowerCase();
+  if(/wordpress|wp-/.test(x)) return "WordPress";
+  if(/ai|rag|llm|ollama|athena|machine.learning/.test(x)) return "AI";
+  if(/pyside|pyqt|desktop|gui/.test(x)) return "Desktop App";
+  if(/html|css|javascript|website|webpage|frontend|react/.test(x)) return "Web";
+  if(/documentation|docs|manual|guide/.test(x)) return "Documentation";
+  if(r.archived) return "Archive";
+  if(/experiment|demo|test|sample/.test(x)) return "Experiment";
+  if(r.language==="Python") return "Python";
+  return r.language||"Other";
+}
+
 function setStats(){
   const langs=new Set(repos.map(r=>r.language).filter(Boolean));
   const active=repos.filter(r=>!r.archived).length;
   const pages=repos.filter(r=>r.has_pages).length;
+  const types=new Set(repos.map(classify));
   document.getElementById("stats").innerHTML=[
-    [repos.length,"Projects"],[langs.size,"Languages"],[active,"Active"],[pages,"GitHub Pages"]
+    [repos.length,"Repositories"],[langs.size,"Languages"],[active,"Active"],
+    [pages,"GitHub Pages"],[types.size,"Project Types"]
   ].map(x=>`<div class="stat"><b>${x[0]}</b><span>${x[1]}</span></div>`).join("");
 }
+
 function makeFilters(){
-  const langs=[...new Set(repos.map(r=>r.language).filter(Boolean))].sort();
-  const values=["All","Active","Archived","Pages",...langs];
-  document.getElementById("filters").innerHTML=values.map(v=>`<button class="filter ${v===filter?"active":""}" data-filter="${esc(v)}">${esc(v)}</button>`).join("");
-  document.querySelectorAll(".filter").forEach(b=>b.onclick=()=>{filter=b.dataset.filter;makeFilters();render()});
+  const values=["All","Active","Archived","Pages","AI","Desktop App","Web","WordPress","Python","Experiment","Documentation","Archive"];
+  document.getElementById("filters").innerHTML=values.map(v=>`<button class="filter ${filter===v?"active":""}" data-f="${esc(v)}">${esc(v)}</button>`).join("");
+  document.querySelectorAll(".filter").forEach(b=>b.onclick=()=>{filter=b.dataset.f;makeFilters();render()});
 }
+
 function matches(r){
   const q=document.getElementById("search").value.trim().toLowerCase();
-  const text=[r.name,r.description,r.language,...(r.topics||[])].join(" ").toLowerCase();
-  const qok=!q||text.includes(q);
-  let fok=true;
-  if(filter==="Active") fok=!r.archived;
-  else if(filter==="Archived") fok=r.archived;
-  else if(filter==="Pages") fok=r.has_pages;
-  else if(filter!=="All") fok=r.language===filter;
-  return qok&&fok;
+  const type=classify(r);
+  const text=[r.name,r.description,r.language,type,...(r.topics||[])].join(" ").toLowerCase();
+  if(q&&!text.includes(q)) return false;
+  if(filter==="Active") return !r.archived;
+  if(filter==="Archived") return r.archived;
+  if(filter==="Pages") return r.has_pages;
+  if(["AI","Desktop App","Web","WordPress","Python","Experiment","Documentation","Archive"].includes(filter)) return type===filter;
+  return true;
 }
+
 function card(r){
-  const topics=(r.topics||[]).slice(0,6).map(t=>`<span class="topic">${esc(t)}</span>`).join("");
-  const pageUrl=r.has_pages?`https://${USERNAME.toLowerCase()}.github.io/${encodeURIComponent(r.name)}/`:null;
+  const type=classify(r);
+  const topics=(r.topics||[]).slice(0,7).map(t=>`<span class="topic">${esc(t)}</span>`).join("");
+  const live=r.has_pages?`<a class="btn live" href="https://${USERNAME.toLowerCase()}.github.io/${encodeURIComponent(r.name)}/" target="_blank" rel="noopener">Live Page ↗</a>`:"";
   return `<article class="card">
-    <div class="top"><h3 class="repo-name"><a href="${r.html_url}" target="_blank" rel="noopener">${esc(r.name)}</a></h3>
-    <span class="badge ${r.archived?"archived":""}">${r.archived?"Archived":"Active"}</span></div>
-    <p class="desc">${esc(r.description||"No description provided.")}</p>
+    <div class="top"><h3 class="name"><a href="${r.html_url}" target="_blank" rel="noopener">${esc(r.name)}</a></h3><span class="type">${esc(type)}</span></div>
+    <div class="status">${r.archived?"📦 Archived":"🟢 Active"}</div>
+    <p class="desc">${esc(r.description||"No GitHub description — open Details to inspect the README.")}</p>
     <div class="topics">${topics}</div>
     <div class="meta"><span>${esc(r.language||"Other")}</span><span>★ ${r.stargazers_count}</span><span>Updated ${date(r.updated_at)}</span></div>
-    <div class="actions"><a class="btn" href="${r.html_url}" target="_blank" rel="noopener">GitHub ↗</a>${pageUrl?`<a class="btn live" href="${pageUrl}" target="_blank" rel="noopener">Live Page ↗</a>`:""}</div>
+    <div class="actions"><a class="btn" href="${r.html_url}" target="_blank" rel="noopener">GitHub ↗</a>${live}<button class="btn detail" onclick="showDetails('${esc(r.name)}')">Details</button></div>
   </article>`;
 }
+
 function render(){
   const list=repos.filter(matches);
   document.getElementById("count").textContent=`${list.length} shown`;
   document.getElementById("repo-list").className=list.length?"grid":"";
   document.getElementById("repo-list").innerHTML=list.length?list.map(card).join(""):`<div class="empty">No projects match your search or filter.</div>`;
 }
-async function load(){
- try{
-   const response=await fetch(API,{headers:{"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2026-03-10"}});
-   if(!response.ok) throw new Error(`GitHub API returned ${response.status}`);
-   repos=(await response.json()).filter(r=>!r.fork);
-   setStats();makeFilters();render();
- }catch(e){
-   document.getElementById("repo-list").innerHTML=`<div class="empty error">Unable to load GitHub repositories.<br><small>${esc(e.message)}</small></div>`;
- }
+
+async function loadAll(){
+  let all=[];
+  for(let page=1;;page++){
+    const r=await fetch(`${API_BASE}/users/${USERNAME}/repos?type=owner&sort=updated&direction=desc&per_page=100&page=${page}`,{headers:{"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2026-03-10"}});
+    if(!r.ok) throw new Error(`GitHub API returned ${r.status}`);
+    const batch=await r.json(); all.push(...batch);
+    if(batch.length<100) break;
+  }
+  return all.filter(r=>!r.fork);
 }
+
+async function showDetails(name){
+  const r=repos.find(x=>x.name===name); if(!r)return;
+  document.getElementById("modal").classList.add("open");
+  document.getElementById("d-title").textContent=r.name;
+  document.getElementById("d-sub").textContent=(r.description||"No repository description.")+" · "+classify(r);
+  document.getElementById("d-boxes").innerHTML=[
+    ["Language",r.language||"Other"],["Status",r.archived?"Archived":"Active"],["Stars",r.stargazers_count],
+    ["Forks",r.forks_count],["Created",date(r.created_at)],["Updated",date(r.updated_at)],
+    ["Default branch",r.default_branch],["Topics",(r.topics||[]).join(", ")||"None"],["Pages",r.has_pages?"Enabled":"Not detected"]
+  ].map(x=>`<div class="detail-box"><small>${esc(x[0])}</small>${esc(x[1])}</div>`).join("");
+  let live="";
+  if(r.has_pages){
+    try{
+      const p=await fetch(`${API_BASE}/repos/${USERNAME}/${encodeURIComponent(r.name)}/pages`,{headers:{"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2026-03-10"}});
+      if(p.ok){const d=await p.json(); if(d.html_url) live=`<a class="btn live" href="${d.html_url}" target="_blank" rel="noopener">Open Live Page ↗</a>`;}
+    }catch(_){}
+  }
+  document.getElementById("d-actions").innerHTML=`<a class="btn" href="${r.html_url}" target="_blank" rel="noopener">Open GitHub ↗</a>${live}`;
+  document.getElementById("d-readme").textContent="Loading README…";
+  try{
+    const raw=`https://raw.githubusercontent.com/${USERNAME}/${encodeURIComponent(r.name)}/${encodeURIComponent(r.default_branch)}/README.md`;
+    const rr=await fetch(raw);
+    if(!rr.ok) throw new Error("README not found");
+    const text=await rr.text();
+    document.getElementById("d-readme").textContent=text.length>7000?text.slice(0,7000)+"\n\n[README preview truncated]":text;
+  }catch(_){document.getElementById("d-readme").textContent="No README.md was found or it could not be loaded.";}
+}
+function closeModal(){document.getElementById("modal").classList.remove("open")}
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
 document.getElementById("search").addEventListener("input",render);
-load();
+
+(async()=>{
+  try{repos=await loadAll();setStats();makeFilters();render()}
+  catch(e){document.getElementById("repo-list").innerHTML=`<div class="empty">Unable to load GitHub repositories.<br><small>${esc(e.message)}</small></div>`}
+})();
 </script>
 </body>
 </html>
