@@ -1,33 +1,20 @@
-# Project Title
+# Fanu2 GitHub Project Hub v1.0
 
-A brief description of your project goes here.
-
-## Table of Contents
-
-- [About](#about)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
-## About
-
-Provide a detailed description of your project. Include information about its purpose, key features, and any other relevant context.
+Static GitHub Pages dashboard for the Fanu2 account.
 
 ## Features
+- Automatic public repository discovery
+- Fork exclusion
+- Search
+- Active / archived / Pages filters
+- Language filters
+- Topics
+- Stars and update dates
+- GitHub Pages links
+- Responsive dashboard
+- No backend or database
 
-List the key features and functionalities of your project.
+## Deploy
+Replace the existing `index.html` in the GitHub Pages repository with the supplied file and push.
 
-- Feature 1
-- Feature 2
-- Feature 3
-
-## Installation
-
-Provide instructions on how to install and set up your project locally. Include any prerequisites or dependencies needed.
-
-```bash
-git clone https://github.com/yourusername/your-repository.git
-cd your-repository
-# Additional setup commands if necessary
+The page uses GitHub's public REST API, so no token is stored in the site.

@@ -1,95 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fanu2 – GitHub Repository Index</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f6f8fa;
-      margin: 0;
-      padding: 0;
-      color: #24292e;
-    }
-    header {
-      background: #24292e;
-      color: white;
-      padding: 1.5rem;
-      text-align: center;
-    }
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    .repo {
-      background: white;
-      border: 1px solid #d0d7de;
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
-      margin-bottom: 1rem;
-    }
-    .repo h2 {
-      margin: 0;
-      font-size: 1.2rem;
-    }
-    .repo a {
-      color: #0969da;
-      text-decoration: none;
-    }
-    .repo p {
-      margin: 0.5rem 0;
-      line-height: 1.4;
-    }
-    .meta {
-      font-size: 0.9rem;
-      color: #57606a;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fanu2 — GitHub Project Hub</title>
+<style>
+:root{--bg:#0b1020;--panel:#111827;--panel2:#172033;--text:#eef2ff;--muted:#9aa7bd;--line:#273449;--accent:#7c9cff;--accent2:#5eead4;--danger:#f59e0b}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#0a0f1d,#101827);color:var(--text)}
+header{padding:42px 24px 34px;border-bottom:1px solid var(--line);background:radial-gradient(circle at 15% 10%,#20305b 0,#101827 38%,#0b1020 80%)}
+.wrap{max-width:1180px;margin:auto}.brand{display:flex;gap:18px;align-items:center}.avatar{width:64px;height:64px;border-radius:16px;background:#202b45;display:grid;place-items:center;font-weight:800;font-size:22px;color:#fff}
+h1{margin:0;font-size:34px}.subtitle{margin:7px 0 0;color:var(--muted);font-size:16px}
+main{padding:24px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}.stat b{display:block;font-size:28px}.stat span{color:var(--muted);font-size:13px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.search{flex:1;min-width:240px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--text);font-size:15px}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:10px 13px;border-radius:9px;cursor:pointer}.filter.active,.filter:hover{background:#243454;color:#fff;border-color:#4965a5}
+.section{display:flex;justify-content:space-between;align-items:center;margin:22px 0 12px}.section h2{font-size:20px;margin:0}.count{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:19px;transition:.18s}.card:hover{transform:translateY(-2px);border-color:#48619a}.top{display:flex;justify-content:space-between;gap:10px}.repo-name{font-size:19px;font-weight:700;margin:0}.repo-name a{color:var(--text);text-decoration:none}.repo-name a:hover{color:var(--accent)}.badge{font-size:11px;padding:4px 8px;border-radius:20px;background:#1e293b;color:#b9c5db;white-space:nowrap}.badge.archived{color:#fbbf24;background:#33270e}.desc{color:var(--muted);line-height:1.5;min-height:44px}.meta{display:flex;gap:13px;flex-wrap:wrap;color:#aeb9ca;font-size:12px}.topics{display:flex;gap:6px;flex-wrap:wrap;margin:13px 0}.topic{background:#182b46;color:#9fc1ff;padding:4px 8px;border-radius:15px;font-size:11px}.actions{display:flex;gap:8px;margin-top:15px}.btn{display:inline-block;text-decoration:none;color:#fff;background:#26375c;border:1px solid #3a4e7a;border-radius:8px;padding:8px 11px;font-size:12px}.btn.live{background:#164e4a;border-color:#277d76}.empty,.loading{padding:35px;text-align:center;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:14px}.error{color:#fecaca}
+footer{text-align:center;padding:30px;color:#718096;font-size:12px}
+@media(max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}h1{font-size:27px}}
+@media(max-width:500px){main{padding:15px}.stats{grid-template-columns:1fr 1fr}.avatar{width:50px;height:50px}.stat b{font-size:23px}}
+</style>
 </head>
 <body>
-
-<header>
-  <h1>Fanu2’s GitHub Projects</h1>
-  <p>Automatically generated index of my public repositories</p>
-</header>
-
-<main id="repo-list">
-  <p>Loading repositories…</p>
+<header><div class="wrap brand"><div class="avatar">F2</div><div><h1>Fanu2 GitHub Project Hub</h1><div class="subtitle">My software projects, experiments and live GitHub Pages</div></div></div></header>
+<main class="wrap">
+<section class="stats" id="stats"><div class="stat"><b>—</b><span>Projects</span></div><div class="stat"><b>—</b><span>Languages</span></div><div class="stat"><b>—</b><span>Active</span></div><div class="stat"><b>—</b><span>GitHub Pages</span></div></section>
+<div class="toolbar"><input id="search" class="search" placeholder="Search projects, descriptions or topics..."><div class="filters" id="filters"></div></div>
+<div class="section"><h2>Projects</h2><span class="count" id="count"></span></div>
+<div id="repo-list" class="grid"><div class="loading">Loading repositories from GitHub…</div></div>
 </main>
-
+<footer>Fanu2 GitHub Project Hub · Data supplied by the GitHub REST API</footer>
 <script>
-  const username = "Fanu2"; // change if needed
-  const repoList = document.getElementById("repo-list");
+const USERNAME="Fanu2";
+const API=`https://api.github.com/users/${USERNAME}/repos?per_page=100&sort=updated`;
+let repos=[], filter="All";
 
-  fetch(`https://api.github.com/users/${username}/repos?sort=updated`)
-    .then(response => response.json())
-    .then(repos => {
-      repoList.innerHTML = "";
-
-      repos.forEach(repo => {
-        if (repo.fork) return; // skip forks
-
-        const div = document.createElement("div");
-        div.className = "repo";
-
-        div.innerHTML = `
-          <h2><a href="${repo.html_url}" target="_blank">${repo.name}</a></h2>
-          <p>${repo.description || "No description provided."}</p>
-          <p class="meta">
-            Language: ${repo.language || "N/A"} • ⭐ ${repo.stargazers_count} • Updated: ${new Date(repo.updated_at).toLocaleDateString()}
-          </p>
-        `;
-
-        repoList.appendChild(div);
-      });
-    })
-    .catch(error => {
-      repoList.innerHTML = "<p>Failed to load repositories.</p>";
-      console.error(error);
-    });
+const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+const date=s=>new Date(s).toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"});
+function setStats(){
+  const langs=new Set(repos.map(r=>r.language).filter(Boolean));
+  const active=repos.filter(r=>!r.archived).length;
+  const pages=repos.filter(r=>r.has_pages).length;
+  document.getElementById("stats").innerHTML=[
+    [repos.length,"Projects"],[langs.size,"Languages"],[active,"Active"],[pages,"GitHub Pages"]
+  ].map(x=>`<div class="stat"><b>${x[0]}</b><span>${x[1]}</span></div>`).join("");
+}
+function makeFilters(){
+  const langs=[...new Set(repos.map(r=>r.language).filter(Boolean))].sort();
+  const values=["All","Active","Archived","Pages",...langs];
+  document.getElementById("filters").innerHTML=values.map(v=>`<button class="filter ${v===filter?"active":""}" data-filter="${esc(v)}">${esc(v)}</button>`).join("");
+  document.querySelectorAll(".filter").forEach(b=>b.onclick=()=>{filter=b.dataset.filter;makeFilters();render()});
+}
+function matches(r){
+  const q=document.getElementById("search").value.trim().toLowerCase();
+  const text=[r.name,r.description,r.language,...(r.topics||[])].join(" ").toLowerCase();
+  const qok=!q||text.includes(q);
+  let fok=true;
+  if(filter==="Active") fok=!r.archived;
+  else if(filter==="Archived") fok=r.archived;
+  else if(filter==="Pages") fok=r.has_pages;
+  else if(filter!=="All") fok=r.language===filter;
+  return qok&&fok;
+}
+function card(r){
+  const topics=(r.topics||[]).slice(0,6).map(t=>`<span class="topic">${esc(t)}</span>`).join("");
+  const pageUrl=r.has_pages?`https://${USERNAME.toLowerCase()}.github.io/${encodeURIComponent(r.name)}/`:null;
+  return `<article class="card">
+    <div class="top"><h3 class="repo-name"><a href="${r.html_url}" target="_blank" rel="noopener">${esc(r.name)}</a></h3>
+    <span class="badge ${r.archived?"archived":""}">${r.archived?"Archived":"Active"}</span></div>
+    <p class="desc">${esc(r.description||"No description provided.")}</p>
+    <div class="topics">${topics}</div>
+    <div class="meta"><span>${esc(r.language||"Other")}</span><span>★ ${r.stargazers_count}</span><span>Updated ${date(r.updated_at)}</span></div>
+    <div class="actions"><a class="btn" href="${r.html_url}" target="_blank" rel="noopener">GitHub ↗</a>${pageUrl?`<a class="btn live" href="${pageUrl}" target="_blank" rel="noopener">Live Page ↗</a>`:""}</div>
+  </article>`;
+}
+function render(){
+  const list=repos.filter(matches);
+  document.getElementById("count").textContent=`${list.length} shown`;
+  document.getElementById("repo-list").className=list.length?"grid":"";
+  document.getElementById("repo-list").innerHTML=list.length?list.map(card).join(""):`<div class="empty">No projects match your search or filter.</div>`;
+}
+async function load(){
+ try{
+   const response=await fetch(API,{headers:{"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2026-03-10"}});
+   if(!response.ok) throw new Error(`GitHub API returned ${response.status}`);
+   repos=(await response.json()).filter(r=>!r.fork);
+   setStats();makeFilters();render();
+ }catch(e){
+   document.getElementById("repo-list").innerHTML=`<div class="empty error">Unable to load GitHub repositories.<br><small>${esc(e.message)}</small></div>`;
+ }
+}
+document.getElementById("search").addEventListener("input",render);
+load();
 </script>
-
 </body>
 </html>
